@@ -1,29 +1,64 @@
 <html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Fancy Form</title>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fancy Form</title>
+		<!-- You may add more stuff here -->
+		<link href="style.css" rel="stylesheet" />
+	</head>
 
-  <!-- You may add more stuff here -->
-  <link href="style.css" rel="stylesheet" />
-</head>
+	<body>
+		<!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
+		<form id="transaction-form">
+			<div class="form-input-section">
+				<div class="form-row">
+					<div class="form-item">
+						<label for="input-address">ETH Address</label>
+						<input
+							required
+							id="input-address"
+							pattern="^0x[a-fA-F0-9]{40}$"
+						/>
+					</div>
+				</div>
 
-<body>
+				<div class="form-row">
+					<div class="form-item">
+						<label for="input-amount">Amount</label>
+						<input required id="input-amount" type="number" />
+					</div>
+				</div>
 
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <label for="input-address">ETH Address</label>
-    <input id="input-address" />
+				<div class="form-row">
+					<div class="form-item">
+						<label for="input-otp">OTP Authentication</label>
+						<div
+							id="digit-group"
+							data-group-name="digits"
+							data-autosubmit="false"
+							autocomplete="off"
+						>
+							<input required type="number" />
+							<input required type="number" />
+							<input required type="number" />
+							<input required type="number" />
+							<input required type="number" />
+							<input required type="number" />
+						</div>
+					</div>
 
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
+					<div id="otp">
+						<button id="otp-button" type="button">Send OTP</button>
+					</div>
+				</div>
+			</div>
 
-    <label for="input-otp">OTP Authentication</label>
-    <input type="number" id="input-otp" />
+			<div class="form-item">
+				<button id="submit-button" type="submit">SEND TOKENS</button>
+				<span id="transaction-alert"></span>
+			</div>
+		</form>
 
-    <button>SEND TOKENS</button>
-  </form>
-  <script src="script.js"></script>
-</body>
-
+		<script src="script.js"></script>
+	</body>
 </html>
