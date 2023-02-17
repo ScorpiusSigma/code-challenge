@@ -1,6 +1,5 @@
 body {
 	display: flex;
-	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	min-width: 360px;
@@ -11,6 +10,14 @@ body {
 label {
 	font-size: 12px;
 }
+
+main {
+	flex: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+}
+
 form {
 	display: flex;
 	flex-direction: column;
@@ -122,4 +129,10 @@ input[type="number"] {
 	color: greenyellow;
 	text-align: center;
 	margin-top: 5px;
+}
+
+#powered-by {
+	color: black;
+	width: 100%;
+	text-align: center;
 }

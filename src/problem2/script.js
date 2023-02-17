@@ -1,5 +1,3 @@
-const onSubmit = (e) => {};
-
 document
 	.getElementById("transaction-form")
 	.addEventListener("submit", function (e) {
@@ -12,7 +10,7 @@ document
 		const address = data[0];
 		const amount = data[1];
 
-		e.target.children[1].children[0].innerHTML = "LOADING...";
+		e.target.children[1].children[0].innerHTML = "SENDING...";
 		setTimeout(() => {
 			e.target.children[1].children[0].innerHTML = "TOKEN SENT";
 			document.getElementById("transaction-alert").innerHTML =
