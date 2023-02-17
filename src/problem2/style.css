@@ -106,11 +106,13 @@ input[type="number"] {
 	color: white;
 	margin: 0 2px;
 }
+
 #digit-group .splitter {
 	padding: 0 5px;
 	color: white;
 	font-size: 24px;
 }
+
 .prompt {
 	margin-bottom: 20px;
 	font-size: 20px;
