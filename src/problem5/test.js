@@ -47,7 +47,8 @@ const TOKENS = [
 ];
 
 // you can use your own RPC provider url (no need to deploy to mainnet)
-const provider = ethers.providers.getDefaultProvider("goerli");
+// const provider = ethers.providers.getDefaultProvider("goerli");
+const provider = new ethers.providers.JsonRpcProvider("https://ethereum-goerli-rpc.allthatnode.com");
 
 const test = async () => {
 	const contract = new ethers.Contract(ADDR, ABI, provider);

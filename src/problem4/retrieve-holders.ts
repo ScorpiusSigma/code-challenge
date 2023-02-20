@@ -1,8 +1,8 @@
-const ethers = require("ethers");
-const ABI = require("./abi.json");
+import { ethers } from "ethers";
+const ABI = require("./abi.json")
 
-const bscMainnetPublicNode = "https://bsc-dataseed1.binance.org/"
-const provider = new ethers.JsonRpcProvider(bscMainnetPublicNode);
+const bscMainnetPublicNode = "https://bsc-dataseed1.binance.org/";
+const provider = new ethers.providers.JsonRpcProvider(bscMainnetPublicNode);
 const swthTokenContractAddress = "0xc0ecb8499d8da2771abcbf4091db7f65158f1468";
 const targetAddresses = [
 	"0xb5d4f343412dc8efb6ff599d790074d0f1e8d430",
@@ -13,12 +13,12 @@ const targetAddresses = [
 const swthContract = new ethers.Contract(
 	swthTokenContractAddress,
 	ABI,
-    provider
+	provider
 );
 
 const getAddressBalance = async (address: string) => {
 	const balance = await swthContract.balanceOf(address);
-    return ethers.formatUnits(balance, 8);
+	return ethers.utils.formatUnits(balance, 8);
 };
 
 const main = () => {
