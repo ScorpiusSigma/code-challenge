@@ -9,7 +9,10 @@ contract Utility {
         uint256 balance;
     }
 
-    function getBalances(address _walletAddress, address[] memory _tokenContractAddresses) public view returns (TokenAmountObject[] memory) {
+    function getBalances(
+        address _walletAddress,
+        address[] memory _tokenContractAddresses
+    ) public view returns (TokenAmountObject[] memory) {
         TokenAmountObject[] memory tokenAmounts = new TokenAmountObject[](_tokenContractAddresses.length);
 
         for (uint256 i = 0; i < _tokenContractAddresses.length; i++) {
