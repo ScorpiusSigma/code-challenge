@@ -19,8 +19,10 @@ var sum_to_n_b = function(n) {
 
 var sum_to_n_c = function(n) {
     // your code here
-    return [...new Array(5)].reduce(
-        (x, y, index) => x + (index + 1),
-        0
-    );
+
+    return n * (n + 1) / 2;
 };
+
+console.log(sum_to_n_a(5))
+console.log(sum_to_n_b(5))
+console.log(sum_to_n_c(5))
