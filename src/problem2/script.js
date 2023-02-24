@@ -11,6 +11,7 @@ document
 		const amount = data[1];
 
 		e.target.children[1].children[0].innerHTML = "SENDING...";
+		e.target.disabled = true;
 		setTimeout(() => {
 			e.target.children[1].children[0].innerHTML = "TOKEN SENT";
 			document.getElementById("transaction-alert").innerHTML =
@@ -18,6 +19,7 @@ document
 
 			setTimeout(() => {
 				e.target.children[1].children[0].innerHTML = "SEND TOKENS";
+				e.target.disabled = false;
 			}, 2000);
 		}, 2000);
 	});
@@ -32,7 +34,8 @@ const handleOtpButtonClick = (e) => {
 
 	e.target.innerHTML = "SENT!";
 
-	let countDown = 30;
+	let countDown = 10;
+	e.target.style.backgroundColor = "gray";
 	const counter = () => {
 		e.target.innerHTML = countDown + "s";
 		countDown--;
@@ -40,11 +43,12 @@ const handleOtpButtonClick = (e) => {
 			clearInterval(interval);
 			e.target.innerHTML = "Send OTP";
 			otpClicked = false;
+			e.target.style.backgroundColor = "#7e8cff";
 		}
 	};
 
 	const interval = setInterval(counter, 1000);
-	countDown = 30;
+	countDown = 10;
 };
 
 document
