@@ -23,6 +23,6 @@ var sum_to_n_c = function(n) {
     return n * (n + 1) / 2;
 };
 
-console.log(sum_to_n_a(5))
-console.log(sum_to_n_b(5))
-console.log(sum_to_n_c(5))
+console.log("Method 1:", sum_to_n_a(1000))
+console.log("Method 2:", sum_to_n_b(1000))
+console.log("Method 3:", sum_to_n_c(1000))
